@@ -47,14 +47,14 @@ class Stack:
 
     def push(self, data):
         if self.is_full():
-            raise('Stack is already full')
+            raise Exception('Stack is already full')
 
         self.storage[self.size] = data
         self.size += 1
 
     def pop(self):
         if self.is_empty():
-            raise('Stack is empty')
+            raise Exception('Stack is empty')
 
         data = self.storage[self.size-1]
         self.size -= 1
@@ -62,7 +62,7 @@ class Stack:
 
     def peek(self):
         if self.is_empty():
-            raise('Stack is empty')
+            raise Exception('Stack is empty')
 
         return self.storage[self.size-1]
 

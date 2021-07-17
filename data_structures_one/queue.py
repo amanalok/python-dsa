@@ -48,7 +48,7 @@ class Queue:
 
     def enqueue(self, data):
         if self.is_full():
-            raise('Queue is already full')
+            raise Exception('Queue is already full')
 
         if self.is_empty():
             self.front = 0
@@ -60,7 +60,7 @@ class Queue:
 
     def dequeue(self):
         if self.is_empty():
-            raise('Queue is empty')
+            raise Exception('Queue is empty')
 
         data = self.storage[self.front]
         if self.front == self.rear:
@@ -81,7 +81,7 @@ class Queue:
 
     def display(self):
         if self.is_empty():
-            raise('Queue is empty. No elements to display!!!')
+            raise Exception('Queue is empty. No elements to display!!!')
 
         print('Following are the elements in the queue: ', end=' ')
         print(self.storage[self.front:self.rear+1])
@@ -93,8 +93,8 @@ def queue_main():
 
     print('Size of queue: {}'.format(q.size()))
 
-    # for data in ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k']:
-    for data in ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j']:
+    for data in ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k']:
+    # for data in ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j']:
         q.enqueue(data)
         q.display()
         print('Size: {}'.format(q.size()))

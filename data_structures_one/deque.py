@@ -44,7 +44,7 @@ class Deque:
 
     def add_front(self, data):
         if self.is_full():
-            raise('Deque is already full !!!')
+            raise Exception('Deque is already full !!!')
 
         if self.front == -1:
             self.front = 0
@@ -58,7 +58,7 @@ class Deque:
 
     def delete_front(self):
         if self.is_empty():
-            raise('Deque is empty !!!')
+            raise Exception('Deque is empty !!!')
 
         data = self.storage[self.front]
 
@@ -72,7 +72,7 @@ class Deque:
 
     def add_rear(self, data):
         if self.is_full():
-            raise('Deque is full !!!')
+            raise Exception('Deque is full !!!')
 
         if self.front == -1:
             self.front = 0
@@ -86,7 +86,7 @@ class Deque:
 
     def delete_rear(self):
         if self.is_empty():
-            raise('Deque is empty !!!')
+            raise Exception('Deque is empty !!!')
 
         data = self.storage[self.rear]
 
@@ -100,7 +100,7 @@ class Deque:
 
     def display(self):
         if self.is_empty():
-            raise('Deque is empty')
+            raise Exception('Deque is empty')
         print('Following are the elements of Deque: ', end='')
         if self.front == self.rear:
             print(self.storage[:self.front+1])

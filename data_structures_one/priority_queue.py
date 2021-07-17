@@ -41,7 +41,7 @@ class MinPriorityQueue:
 
     def enqueue(self, data):
         if self.size == self.capacity:
-            raise('PQ is already full !!!')
+            raise Exception('PQ is already full !!!')
         self.storage[self.size] = data
         self.size += 1
         self.heapify_up()
@@ -58,7 +58,7 @@ class MinPriorityQueue:
 
     def dequeue(self):
         if self.size == 0:
-            raise('PQ is empty !!!')
+            raise Exception('PQ is empty !!!')
         data = self.storage[0]
         self.storage[0] = self.storage[self.size-1]
         self.size -= 1
@@ -168,7 +168,7 @@ class MaxPriorityQueue:
 
     def enqueue(self, data):
         if self.size == self.capacity:
-            raise('Max PQ is already full !!!')
+            raise Exception('Max PQ is already full !!!')
         self.storage[self.size] = data
         self.size += 1
         self.heapify_up()
@@ -184,7 +184,7 @@ class MaxPriorityQueue:
 
     def dequeue(self):
         if self.size == 0:
-            raise('Max PQ is empty !!!')
+            raise Exception('Max PQ is empty !!!')
 
         data = self.storage[0]
         self.storage[0] = self.storage[self.size - 1]
@@ -209,7 +209,7 @@ class MaxPriorityQueue:
 
     def recursive_enqueue(self, data):
         if self.size == self.capacity:
-            raise('Max PQ is already full')
+            raise Exception('Max PQ is already full')
         self.storage[self.size] = data
         self.size += 1
         self.recursive_heapify_up(self.size-1)
@@ -224,7 +224,7 @@ class MaxPriorityQueue:
 
     def recursive_dequeue(self):
         if self.size == 0:
-            raise('Max PQ is full')
+            raise Exception('Max PQ is full')
         data = self.storage[0]
         self.storage[0] = self.storage[self.size-1]
         self.recursive_heapify_down(0)

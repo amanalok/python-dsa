@@ -1,4 +1,4 @@
-class SizedCircularQueue:
+class CircularQueue:
 
     def __init__(self, size):
         self.size = size
@@ -50,7 +50,7 @@ class SizedCircularQueue:
 # Driver Code
 if __name__ == '__main__':
 
-    ob = SizedCircularQueue(5)
+    ob = CircularQueue(5)
     ob.enqueue(14)
     ob.enqueue(22)
     ob.enqueue(13)

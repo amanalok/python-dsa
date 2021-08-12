@@ -131,7 +131,7 @@ class LinkedList:
 
 
 
-if __name__ == '__main__':
+def singly_single_list():
     llist = LinkedList()
     foo = 0
     for item in ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j']:
@@ -169,3 +169,8 @@ if __name__ == '__main__':
     llist.sort()
     print('*** Sorted linked list ***')
     print(llist)
+
+
+
+if __name__ == '__main__':
+    singly_single_list()

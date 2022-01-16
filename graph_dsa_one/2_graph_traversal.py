@@ -33,7 +33,7 @@ def adj_list_dfs_iterative(graph, source, marked, edge_to):
     return marked, edge_to
 
 
-def adj_list_bfs_iteraive(graph, source, marked, edge_to, dist_to):
+def adj_list_bfs_iterative(graph, source, marked, edge_to, dist_to):
     q = Queue()
     q.append(source)
     marked[source] = True

@@ -67,6 +67,29 @@ class AdjListGraph:
 
         return count
 
+    def _remove_edge_util(self, v, w):
+        node = self.storage[v]
+        if node is None:
+            return
+
+        if node.value == w:
+            self.storage[v] = node.next
+            return
+
+        previous_node = node
+        while(node is not None):
+            if node.value == w:
+                previous_node.next = node.next
+                return
+            previous_node = node
+            node = node.next
+
+
+    def remove_edge(self, v, w):
+        self._remove_edge_util(v, w)
+        self._remove_edge_util(w, v)
+
+
 
 class AdjMatrixGraph:
 
@@ -131,6 +154,9 @@ class AdjMatrixGraph:
 
 
 def create_graph_one(graph):
+    '''
+    This method creates an undirected graph with 3 connected components.
+    '''
     graph.add_edge(0, 1)
     graph.add_edge(0, 2)
     graph.add_edge(0, 5)
@@ -151,6 +177,45 @@ def create_graph_one(graph):
 def create_graph_two(graph):
     for v, w in [(0, 1), (0, 2), (0, 5), (1, 2),
                 (2, 3), (2, 4), (3, 4), (3, 5)]:
+        graph.add_edge(v, w)
+
+    return graph
+
+
+def create_graph_three(graph):
+    '''
+    This method creates a Bi-partite graph.
+    '''
+    for v, w in [(0, 1), (0, 2), (0, 5), (0, 6), (1, 3),
+                (2, 3), (2, 4), (4, 5), (4, 6)]:
+        graph.add_edge(v, w)
+
+    return graph
+
+
+def create_graph_four(graph):
+    for v, w in [(0, 1), (0, 2), (1, 3)]:
+        graph.add_edge(v, w)
+
+    return graph
+
+
+def create_graph_five(graph):
+    '''
+    This method creates a graph with a Euler Cycle
+    '''
+    for v, w in [(0, 1), (0, 2), (0, 5), (0, 6), (1, 2),
+                (2, 3), (2, 4), (3, 4), (4, 5), (4, 6)]:
+        graph.add_edge(v, w)
+
+    return graph
+
+
+def create_graph_six(graph):
+    '''
+    This method creates a graph with Euler Path
+    '''
+    for v, w in [(0, 1), (0, 2), (1, 2), (2, 3)]:
         graph.add_edge(v, w)
 
     return graph

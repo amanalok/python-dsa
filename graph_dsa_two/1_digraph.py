@@ -56,7 +56,7 @@ class AdjListDigraph:
 
         return num_edges
 
-    def degree(self, v):
+    def out_degree(self, v):
         count = 0
         for _ in self.adjacent(v):
             count += 1
@@ -66,7 +66,7 @@ class AdjListDigraph:
     def max_out_degree(self):
         max = 0
         for v in range(self.num_vertices):
-            d = self.degree(v)
+            d = self.out_degree(v)
             if d > max:
                 max = d
 

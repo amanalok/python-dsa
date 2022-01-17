@@ -70,7 +70,7 @@ class AdjListGraph:
     def _remove_edge_util(self, v, w):
         node = self.storage[v]
         if node is None:
-            return
+            raise Exception('No adjacent vertices present for {}'.format(v))
 
         if node.value == w:
             self.storage[v] = node.next

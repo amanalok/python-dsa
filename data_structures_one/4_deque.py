@@ -15,16 +15,15 @@ class DequeWithList:
         self.len += 1
 
     def dequeue_front(self):
-        return self.storage.pop(0)
         self.len -= 1
+        return self.storage.pop(0)
 
     def dequeue_rear(self):
         self.len -= 1
         return self.storage.pop()
 
-    def size():
+    def size(self):
         return self.len
-
 
 
 class Deque:

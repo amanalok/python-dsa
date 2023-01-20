@@ -101,7 +101,7 @@ class MinHeap:
         self.size += 1
         self.recursive_heapify_up(index)
 
-    def recursive_heapify_up(index):
+    def recursive_heapify_up(self, index):
         if (self.has_parent(index) and
             self.get_parent(index) > self.storage[index]):
 
@@ -120,7 +120,7 @@ class MinHeap:
         self.recursive_heapify_down(index)
         return temp
 
-    def recursive_heapify_down(index):
+    def recursive_heapify_down(self, index):
         min_value_index = index
 
         if (self.has_left_child(index)
